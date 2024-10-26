@@ -1,0 +1,548 @@
+{
+    "elements": [
+        {
+            "image": {
+              "src": "./images/4198835a-3d44-4eef-a456-e794211d2e67.jpg"
+            },
+            "paragraphone": {
+              "text": "Amul Salted Butter"
+            },
+            "paragraphtwo": {
+              "text": "500ml"
+            },
+            "priceAndButton": {
+              "price": {
+                "text": "$34"
+              },
+              "button": {
+                "text": "ADD"
+              }
+            }
+          },
+      {
+        "image": {
+          "src": "./images/4e0f233b-edc1-42b6-b1bc-25448e00b748 (1).jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/dairy_product2.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },{
+        "image": {
+          "src": "./images/68bf6ebf-6dab-4b85-acdc-28d564a1585e.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },{
+        "image": {
+          "src": "./images/75f11ae1-4806-49de-9a0d-86fcfef19ed8.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/228c7482-f2c4-49d4-adee-61cefc97883a.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/240e96ee-4471-49d9-92f0-174b61e832f4.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/15198aa9-50d0-496c-b957-bf7604e1ee69.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/4198835a-3d44-4eef-a456-e794211d2e67.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/b7f16999-d367-4260-b00d-7402dfd17c60.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/4198835a-3d44-4eef-a456-e794211d2e67.jpg"
+        },
+        "paragraphone": {
+          "text": "Amul Salted Butter"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+  {
+    "image": {
+      "src": "./images/4e0f233b-edc1-42b6-b1bc-25448e00b748 (1).jpg"
+    },
+    "paragraphone": {
+      "text": "Amul Salted Butter"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },
+  {
+    "image": {
+      "src": "./images/dairy_product2.jpg"
+    },
+    "paragraphone": {
+      "text": "Amul Salted Butter"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },{
+    "image": {
+      "src": "./images/68bf6ebf-6dab-4b85-acdc-28d564a1585e.jpg"
+    },
+    "paragraphone": {
+      "text": "Amul Salted Butter"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },{
+    "image": {
+      "src": "./images/75f11ae1-4806-49de-9a0d-86fcfef19ed8.jpg"
+    },
+    "paragraphone": {
+      "text": "Amul Salted Butter"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },{
+    "image": {
+      "src": "./images/75f11ae1-4806-49de-9a0d-86fcfef19ed8.jpg"
+    },
+    "paragraphone": {
+      "text": "Amul Salted Butter"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },
+  {
+    "image": {
+      "src": "./images/4e0f233b-edc1-42b6-b1bc-25448e00b748 (1).jpg"
+    },
+    "paragraphone": {
+      "text": "Amul Salted Butter"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  }
+    ],"elementone": [
+        {
+            "image": {
+              "src": "./images/pro_496994.jpg"
+            },
+            "paragraphone": {
+              "text": "Colour Roach - Stash"
+            },
+            "paragraphtwo": {
+              "text": "500ml"
+            },
+            "priceAndButton": {
+              "price": {
+                "text": "$34"
+              },
+              "button": {
+                "text": "ADD"
+              }
+            }
+          },
+      {
+        "image": {
+          "src": "./images/pro_537053.jpg"
+        },
+        "paragraphone": {
+          "text": "Colour Roach - Stash "
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+      {
+        "image": {
+          "src": "./images/f416582a-baac-4aab-a7fc-a9eca1740a2a.jpg"
+        },
+        "paragraphone": {
+          "text": "Colour Roach - Stash"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },{
+        "image": {
+          "src": "./images/pro_506711.jpg"
+        },
+        "paragraphone": {
+          "text": "Colour Roach - Stash"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },{
+        "image": {
+          "src": "./images/pro_496994.jpg"
+        },
+        "paragraphone": {
+          "text": "Colour Roach - Stash"
+        },
+        "paragraphtwo": {
+          "text": "500ml"
+        },
+        "priceAndButton": {
+          "price": {
+            "text": "$34"
+          },
+          "button": {
+            "text": "ADD"
+          }
+        }
+      },
+  {
+    "image": {
+      "src": "./images/pro_537053.jpg"
+    },
+    "paragraphone": {
+      "text": "Colour Roach - Stash"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },
+  {
+    "image": {
+      "src": "./images/f416582a-baac-4aab-a7fc-a9eca1740a2a.jpg"
+    },
+    "paragraphone": {
+      "text": "Colour Roach - Stash"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },{
+    "image": {
+      "src": "./images/pro_506711.jpg"
+    },
+    "paragraphone": {
+      "text": "Colour Roach - Stash "
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },
+  {
+    "image": {
+      "src": "./images/pro_496994.jpg"
+    },
+    "paragraphone": {
+      "text": "Colour Roach - Stash"
+    },
+    "paragraphtwo": {
+      "text": "500ml"
+    },
+    "priceAndButton": {
+      "price": {
+        "text": "$34"
+      },
+      "button": {
+        "text": "ADD"
+      }
+    }
+  },
+{
+"image": {
+  "src": "./images/pro_537053.jpg"
+},
+"paragraphone": {
+  "text": "Colour Roach - Stash "
+},
+"paragraphtwo": {
+  "text": "500ml"
+},
+"priceAndButton": {
+  "price": {
+    "text": "$34"
+  },
+  "button": {
+    "text": "ADD"
+  }
+}
+},
+{
+"image": {
+  "src": "./images/f416582a-baac-4aab-a7fc-a9eca1740a2a.jpg"
+},
+"paragraphone": {
+  "text": "Colour Roach - Stash "
+},
+"paragraphtwo": {
+  "text": "500ml"
+},
+"priceAndButton": {
+  "price": {
+    "text": "$34"
+  },
+  "button": {
+    "text": "ADD"
+  }
+}
+},{
+"image": {
+  "src": "./images/pro_506711.jpg"
+},
+"paragraphone": {
+  "text": "Colour Roach - Stash"
+},
+"paragraphtwo": {
+  "text": "500ml"
+},
+"priceAndButton": {
+  "price": {
+    "text": "$34"
+  },
+  "button": {
+    "text": "ADD"
+  }
+}
+  }
+    ]
+  }
+  
