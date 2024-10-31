@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import Card from './card'; 
-import elementone from './elements.json';
+import elementfour from './elements.json';
 
 const Mouth = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalElements = elementone.elementone.length;
+  const totalElements = elementfour.elementfour.length;
   const [visibleCount, setVisibleCount] = useState(1); 
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const Mouth = () => {
           }}
         >
             
-          {elementone.elementone.map((element, index) => (
+          {elementfour.elementfour.map((element, index) => (
             <div className="slider-card" key={index}>
               <Card element={element} />
             </div>

@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import Card from './card'; 
-import elementone from './elements.json';
+import elementthree from './elements.json';
+import Card from './card'
 
 const Hukkah = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalElements = elementone.elementone.length;
+  const totalElements = elementthree.elementthree.length; // Updated to elementthree
   const [visibleCount, setVisibleCount] = useState(1); 
 
   useEffect(() => {
@@ -39,17 +39,14 @@ const Hukkah = () => {
 
   return (
     <div className='container'>
-        
       <div className='slider'>
-      <div className='row d-flex'>
-            <div className='col-md-6 col-sm-12 p d-flex justify-content-start'>
-              <p>
-              Hookah
-              </p>
-            </div>
-            <div className='col-md-6 col-sm-12 d-flex justify-content-end'>
-               <p><a href='see.js'>see all</a></p> 
-            </div>
+        <div className='row d-flex'>
+          <div className='col-md-6 col-sm-12 p d-flex justify-content-start'>
+            <p>Hookah</p>
+          </div>
+          <div className='col-md-6 col-sm-12 d-flex justify-content-end'>
+            <p><a href='see.js'>see all</a></p> 
+          </div>
         </div>
         <div 
           className="slider-track"
@@ -59,8 +56,7 @@ const Hukkah = () => {
             width: `${totalElements * (100 / visibleCount)}%`,
           }}
         >
-            
-          {elementone.elementone.map((element, index) => (
+          {elementthree.elementthree.map((element, index) => ( // Updated to elementthree
             <div className="slider-card" key={index}>
               <Card element={element} />
             </div>

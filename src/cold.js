@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import Card from './card'; 
-import elementone from './elements.json';
+import Card from './card';
+import elementfive from './elements.json';
 
 const Cold = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalElements = elementone.elementone.length;
+  const totalElements = elementfive.elementfive.length;
   const [visibleCount, setVisibleCount] = useState(1); 
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const Cold = () => {
   };
 
   return (
-    <div className='container'>
+    <div className='container'style={{backgroundColor:'white'}}>
         
       <div className='slider'>
       <div className='row d-flex'>
@@ -60,7 +60,7 @@ const Cold = () => {
           }}
         >
             
-          {elementone.elementone.map((element, index) => (
+          {elementfive.elementfive.map((element, index) => (
             <div className="slider-card" key={index}>
               <Card element={element} />
             </div>
