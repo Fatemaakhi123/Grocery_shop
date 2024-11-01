@@ -117,7 +117,7 @@ a{
   padding: 1rem;
   border: 0.1rem solid #eaeaea;
   width: 11.2rem;
-  height: 17.5rem; 
+  height: 17.9rem; 
   border-radius: 0.5rem;
 }
 
@@ -262,59 +262,61 @@ ul{
 }
 .organise{
   display: flex;
-  margin-top: 6.8rem;
-  width: 95%;
-  padding-bottom: 1rem;
+  margin-top: 6.1rem;
+  width: 100%;
   margin-bottom: -0.001rem;
+  list-style-type: none; 
 }
 .organise li{
-  margin-left: 1.4rem;
+padding: 1rem;
+transition: transform 1s ease;
 }
 .organise li, .organise li a {
   font-size: 0.95rem !important;
   color:#636363;
 }
-
+.organise li:hover{
+background-color: #f5f5f5;
+}
 .custom-dropdown-menu {
   max-height: 200px; 
   overflow-y: auto; 
   border-radius: 0; 
 }
-
 .custom-dropdown-menu::-webkit-scrollbar {
-  width: 8px; 
-}
+  width: 14px;
+  background-color: white; 
 
+}
 .custom-dropdown-menu::-webkit-scrollbar-thumb {
-  background-color: #888;  
+  background-color: #dedede;  
+  
 }
-
 .dropdown-menu {
-  width: 13rem;
+  width: 13.54rem;margin-top: 1.009rem;
 }
-
 .dropdown-menu .dropdown-item {
   width: 100%;
   display: flex;       
 }
-
 .dropdown-menu .dropdown-divider {
   width: 100%;
-  border-top: 0.1rem solid #ccc;
-  padding: 0.6rem;
 }
-
 .dropdown-menu .dropdown-item:hover {
   background-color: #f0f0f0;
   color: #000;
 }
-
+.dropdown-divider
+{
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  color: #f0f0f0;
+}
 .link-style {
   font-size: 1rem; 
   color: black;    
   text-decoration: none; 
 }
-
 .link-style:hover {
   color: darkgray; 
 }
@@ -325,39 +327,28 @@ ul{
 .col{
   width: 20%;
 }
+.dropdown-menu {
+  display: flex;
+  border: none;
+  margin-left: -8rem;
+  z-index: 1000; 
+  position: absolute; 
+  left: 0; 
+  height: auto; 
+  max-height: 45rem; 
+  overflow-y: auto; 
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
 .custom-dropdown-menu {
-  max-height: 40rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  border-radius: 0;
-  padding: 0;
-}
+  display: block; 
 
+}
 .custom-dropdown-item {
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem 1rem; 
-  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
 }
-
-.dropdown-divider {
-  margin: 0;
-  width: 100%;
-  border-top: 1px solid #eaeaea;
-}
-
-.custom-dropdown-menu::-webkit-scrollbar {
-  width: 10px;
-}
-
-.custom-dropdown-menu::-webkit-scrollbar-thumb {
-  background-color: #cccccc;
-}
-
-.custom-dropdown-menu::-webkit-scrollbar-track {
-  background: transparent;
-}
-
 
 .slider-tra {
   display: flex;
@@ -456,15 +447,101 @@ ul{
   color: #999;
 }
 
-.sort-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
 .sort-dropdown select {
   padding: 5px 15px;
-  font-size: 14px;
+  font-size: 14.5px;
   border: 1px solid #ccc;
   border-radius: 4px;
   color: #999;
 }
+:root {
+  --height: 16px;
+  --half-height: calc(var(--height) / 2);
+  --thickness: 4px; 
+  --offset: 4px;
+  --background-color: #0066cc;
+  --line-color: #F7A9B9;
+}
+.offer {
+  position: absolute;
+  display: block;
+  width: 1.5rem;
+  height: 1.9rem;
+  background-color: #1794d3;
+  top: 0;
+  left: 1rem;
+  font-size: 0.6rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.offer::after {
+  content: "";
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  width: 100%;
+  height: 16px; 
+  background: 
+    linear-gradient(-45deg, transparent 6px, #1794d3 0), 
+    linear-gradient(45deg, transparent 6px, #1794d3 0);
+  background-size: 6px 6px;
+  background-repeat: repeat-x;
+}
+.slider-tra::-webkit-scrollbar {
+  height: 8px; 
+}
+
+.slider-tra::-webkit-scrollbar-track {
+  background: #e6edf9; 
+}
+
+.slider-tra::-webkit-scrollbar-thumb {
+  background-color: #b3c6ff; 
+  border-radius: 10px; 
+}
+
+.slider-tra {
+  scrollbar-width: thin;
+  scrollbar-color: #b3c6ff #e6edf9;
+}
+
+.slider-tra {
+  overflow-x: auto; 
+  overflow-y: hidden;
+  scrollbar-width: thin; 
+  scrollbar-color: #b3c6ff #e6edf9; 
+}
+
+.slider-tra::-webkit-scrollbar {
+  height: 8px; 
+}
+
+.slider-tra::-webkit-scrollbar-track {
+  background: #e6edf9; 
+}
+
+.slider-tra::-webkit-scrollbar-thumb {
+  background-color: #b3c6ff; 
+  border-radius: 10px; 
+}
+
+.item-image {
+  width: 3.3rem;
+  height: 3.3rem;
+  margin-right: 0.5rem;
+  transition: transform 0.3s, background-color 0.3s; 
+  background-color: transparent; 
+  border-radius: 4px; 
+}
+
+.border-column:hover .item-image {
+  transform: scale(1.1); 
+}
+
+.item-image.active {
+  transform: scale(1.1);
+}
+
