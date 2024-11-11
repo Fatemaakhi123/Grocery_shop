@@ -4,11 +4,22 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react'; 
 import data from './elements.json';
-import Card from './card'; 
+import Card1 from './card1';
 
 const Store = () => {
   const [activeItem, setActiveItem] = useState(0);
+  const [selectedSort, setSelectedSort] = useState("Relevance");
   const ataitems = data.ataitems; 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState);
+  };
+
+  const handleSortChange = (sortOption) => {
+    setSelectedSort(sortOption);
+    setIsDropdownOpen(false); 
+  };
 
   return (
     <>
@@ -24,7 +35,7 @@ const Store = () => {
               overflow: 'hidden'
             }}
           >
-            <div className='col-md-3 p-0'>
+            <div className='col-lg-3 col-md-3 p-0'>
               <div 
                 style={{
                   position: 'relative',
@@ -76,115 +87,105 @@ const Store = () => {
                 </ul>
               </div>
             </div>
-            <div className='col-md-9 pt-3'>
+            <div className='col-lg-9 col-md-9 pt-1'>
               <div className='row p-0 m-0'>
                 <div className='col-md-6'>
                   <p style={{ fontWeight: 'bold', fontSize: '1.05rem' }}>Buy Atta Online</p>
                 </div>
-                <div className='col-md-6 d-flex justify-content-end'>
+                <div className='col-md-6 d-flex justify-content-end align-items-center'>
                   <p style={{ fontSize: '0.9rem', color: '#888', marginRight: '0.4rem' }}>Sort by</p>
-                  <div className="sort-dropdown" >
-                    <select style={{ padding: '0rem 3rem', display: 'flex', justifyContent: 'space-between', color: '#6bc249 ' }}>
-                      <option value="relevance" selected>Relevance</option>
-                      <option value="date">Date</option>
-                      <option value="popularity">Popularity</option>
-                      <option value="rating">Rating</option>
-                    </select>
+                
+                  <div className="sort-dropdown position-relative">
+                    <button 
+                      className="btn btn-light dropdown-toggle" 
+                      onClick={toggleDropdown} 
+                      style={{ 
+                        padding: '0rem 1.5rem', 
+                        marginTop:'-1rem',
+                        display: 'flex', 
+                        justifyContent: 'left', 
+                        color: '#6bc249',
+                        border: '1px solid #6bc249',
+                        borderRadius: '5px',
+                        backgroundColor: '#fff', 
+                      }}
+                    >
+                      {selectedSort} <i className="bi bi-chevron-down ms-2"></i>
+                    </button>
+                    {isDropdownOpen && (
+                      <ul 
+                        className="dropdown-menu show" 
+                        style={{ 
+                          padding: '0.5rem', 
+                          width: '200px',
+                          position: 'absolute', 
+                          top: '100%',
+                           
+                          right: 0, 
+                          zIndex: 1, 
+                          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                          backgroundColor: '#fff', 
+                        }}
+                      >
+                        {["Relevance", "Price (Low to High)", "Price (High to Low)", "Discount (High to Low)", "Name (A to Z)"].map((option) => (
+                          <li key={option} style={{ marginBottom: '5px' }}>
+                            <button 
+                              className="dropdown-item d-flex align-items-center" 
+                              onClick={() => handleSortChange(option)}
+                              style={{ 
+                                color: option === selectedSort ? '#6bc249' : '#000',
+                                backgroundColor: 'transparent', 
+                                border: 'none',
+                                width: '100%',
+                                textAlign: 'left',
+                                padding: '0.25rem 1rem',
+                              }}
+                            >
+                              {option}
+                              {option === selectedSort && (
+                                <i className="bi bi-check-circle-fill ms-auto" style={{ color: '#6bc249' }}></i>
+                              )}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </div>
-              <div style={{ backgroundColor: '#e6edf9', height: '100vh', overflow: 'hidden' }}>
-               
               <div 
-  className="slider-tra" 
-  style={{ 
-    width: '100%', 
-    height: 'auto',
-    overflowX: 'scroll',   
-    overflowY: 'hidden', 
-    display: 'flex',
-    padding: '10px 0',
-    boxSizing: 'border-box', 
-  }}
->
-  {data.elementnew.map((element, index) => (
-    <div 
-      className="slider-card1" 
-      key={index} 
-      style={{ 
-        margin: '5px', 
-        flex: '0 0 auto', 
-        width: '170px', 
-      }}
-    >
-      <Card element={element} />
-    </div>
-  ))}
-</div>
-
-                <div style={{ maxHeight: '70vh', overflowY: 'auto', position: 'relative', padding: '20px', marginTop: '10px' }}>
-                  <h2>Other Content</h2>
-                  <p>This is some content that can be scrolled after scrolling through the cards.</p>
-                </div>
-
-              </div>
-            </div>
-            <div className='row p-4 m' style={{ border: '1px solid #ddd', fontFamily: 'Arial' }}>
-              <div className='col-md-6'>
-                <p style={{ fontWeight: 'bold', fontSize: '1.05rem' }}>
-                  Buy Atta at Online grocery store in India
-                </p>
-                <p style={{ fontSize: '0.8rem', color: '#888' }}>
-                  Are you super fond of online shopping because you hate crowded supermarkets? Now you don't need to worry as Blinkit is delivering Atta at your doorstep superfast with easy returns for your complete peace of mind.<br />
-                  Get Atta delivered to your home in minutes. You can check Atta price before buying.<br />
-                  We deliver Atta at various cities across India. Buy from several popular brands like <span style={{ color: '#40bd0d' }}>Aashirvaad, Pillsbury, Fortune.</span>
-                </p>
-              </div>
-              <div className='col-md-6'>
-                <div style={{ width: '100%', fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: '0 auto', fontSize: '0.9rem' }}>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Atta Price List</h4>
-                  <table style={{ width: '100%', fontSize: '0.75rem', color: '#888' }}>
-                    <thead>
-                      <tr>
-                        <th style={{ textAlign: 'left', fontWeight: 'bold', fontSize: '0.7rem' }}>Atta</th>
-                        <th style={{ textAlign: 'right', fontWeight: 'bold', fontSize: '0.7rem' }}>Price</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1.<span style={{ color: '#40bd0d' }}> Fortune Chakki Fresh (100% Atta, 0% Maida) Atta</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.240</td>
-                      </tr>
-                      <tr>
-                        <td>2.<span style={{ color: '#40bd0d' }}> Aashirvaad Whole Wheat Atta</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.320</td>
-                      </tr>
-                      <tr>
-                        <td>3.<span style={{ color: '#40bd0d' }}> Pillsbury Chakki Fresh Atta</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.380</td>
-                      </tr>
-                      <tr>
-                        <td>4.<span style={{ color: '#40bd0d' }}> Ashirvad Atta (Whole Wheat)</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.210</td>
-                      </tr>
-                      <tr>
-                        <td>5.<span style={{ color: '#40bd0d' }}> Patanjali Whole Wheat Atta</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.300</td>
-                      </tr>
-                      <tr>
-                        <td>6.<span style={{ color: '#40bd0d' }}> Dadaji's 100% Pure Whole Wheat Atta</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.280</td>
-                      </tr>
-                      <tr>
-                        <td>7.<span style={{ color: '#40bd0d' }}> Duda Atta (Whole Wheat)</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.290</td>
-                      </tr>
-                      <tr>
-                        <td>8.<span style={{ color: '#40bd0d' }}> MD Atta (Whole Wheat)</span></td>
-                        <td style={{ textAlign: 'right' }}>Rs.350</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                style={{ 
+                  backgroundColor: '#e6edf9', 
+                  height: '100vh', 
+                  overflow: 'hidden' 
+                }}
+              >
+                <div 
+                  className="slider-tra" 
+                  style={{ 
+                    width: '100%', 
+                    height: 'calc(100vh - 10px)',
+                    overflowX: 'scroll', 
+                    overflowY: 'auto', 
+                    display: 'flex',
+                    padding: '5px 0',
+                    boxSizing: 'border-box', 
+                  }}
+                >
+                  {data.elementnew.map((element, index) => (
+                    <div 
+                      className="slider-card1" 
+                      key={index} 
+                      style={{ 
+                        margin: '0 2px',
+                        width: '20%', 
+                        flex: '0 0 18.5%', 
+                        boxSizing: 'border-box', 
+                      }}
+                    >
+                      <Card1 element={element} />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

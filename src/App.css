@@ -11,6 +11,9 @@ img {
   height: auto;
   max-width: 100%;
 }
+.container{
+  max-width: 1300px;
+}
 .color{
 
   color: #ebebeb;
@@ -103,6 +106,9 @@ a{
     padding: 33px 0;
     background: rgb(255, 253, 251);
     position: relative;
+    overflow: hidden;
+    position: relative;
+    margin-top: -1rem;
   }
   .slider-track {
     display: flex;
@@ -126,13 +132,23 @@ a{
   height: auto; 
   margin: auto;
 }
-
-.slider {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  margin-top: -1rem;
+.card1 {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem;
+  border: 0.1rem solid #eaeaea;
+  background-color: white;
+  width: 100%; 
+  border-radius: 0.5rem;
+  box-sizing: border-box;
 }
+
+.card1 img {
+  width: 5rem;
+  height: auto; 
+  margin: auto;
+}
+
 
 .slider-track {
   display: flex;
@@ -259,20 +275,21 @@ ul{
   width: 100%;
   z-index: 900; 
   background-color: white; 
+ 
 }
 .organise{
   display: flex;
-  margin-top: 6.1rem;
+  margin-top: 5.5rem;
   width: 100%;
   margin-bottom: -0.001rem;
   list-style-type: none; 
 }
 .organise li{
-padding: 1rem;
+padding: 0.4rem;
 transition: transform 1s ease;
 }
 .organise li, .organise li a {
-  font-size: 0.95rem !important;
+  font-size: 0.8rem !important;
   color:#636363;
 }
 .organise li:hover{
@@ -362,10 +379,10 @@ background-color: #f5f5f5;
 }
 
 .slider-card1 {
-  width: 18%; 
+  width: 15%; 
   margin-right: 0.75rem;
   box-sizing: border-box;
-  padding: 0 5px; 
+  padding: 0 0px; 
 }
 .m{
   margin: .05rem;
@@ -544,4 +561,49 @@ background-color: #f5f5f5;
 .item-image.active {
   transform: scale(1.1);
 }
+.btn{
+  border: none;
+  border-radius: 0.6rem;
+  background-color: green;
+  font-size: 1rem;
+  padding: 0.75rem;
+  color: white;
+  font-family: "Helvetica";
+}
+.login{
+  
+  border:none;
+  background: none;
+  font-size: 1.2rem;
+}
 
+@media only screen and (max-width: 1025px) {
+ .location p{
+  font-size: 0.7rem;
+ }
+ .location b{
+  font-size: 0.95rem;
+ }
+ .btn{
+  font-size: 0.7rem;
+  padding: 0.55rem;
+ }
+ .login{
+  font-size: 0.9rem;
+ }
+}
+@media only screen and (max-width: 769px) {
+  .location p{
+   font-size: 0.35rem;
+  }
+  .location b{
+   font-size: 0.65rem;
+  }
+  .btn{
+   font-size: 0.4rem;
+   padding: 0.25rem;
+  }
+  .login{
+   font-size: 0.6rem;
+  }
+ }

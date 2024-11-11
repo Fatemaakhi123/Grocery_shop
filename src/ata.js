@@ -8,7 +8,7 @@ const Ata = () => {
   return (
     <>
         <List />
-      <div style={{ paddingTop: '9rem' }}>
+      <div style={{ paddingTop: '8rem' }}>
         <Store />
       </div>
     </>

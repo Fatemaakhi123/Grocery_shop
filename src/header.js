@@ -64,7 +64,10 @@ const Header = () => {
     <div className='container-fluid background'>
       <div className='row border pos'>
         <div className='col-md-1 col-sm-12 border-right d-flex justify-content-center align-items-center p-2 logo'>
-          <img src='./images/logo.svg' alt='Logo' />
+        <a href="/">
+  <img src='./images/logo.svg' alt='Logo'/>
+</a>
+
         </div>
         <div className='col-md-2 col-sm-12 location p-2' onClick={toggleLocationModal} style={{ cursor: 'pointer' }}>
           <b>Delivery in 8 minutes</b>
@@ -74,18 +77,10 @@ const Header = () => {
           <SearchInput />
         </div>
         <div className='col-md-2 col-sm-12 d-flex justify-content-around align-items-center p-4'>
-          <button type='button' style={{ border: "none", background: "none", fontSize: "1.2rem" }} onClick={toggleLoginModal}>Login</button>
+          <button type='button' className='login' onClick={toggleLoginModal}>Login</button>
           <button
             type="button"
-            style={{
-              border: "none",
-              borderRadius: "0.6rem",
-              background: "green",
-              fontSize: "1rem",
-              padding: "0.75rem",
-              color: "white",
-              fontFamily: "Helvetica",
-            }}
+            className='btn'
           >
             <i
               className="bi bi-cart"

@@ -8,73 +8,75 @@ import elements from './elements.json';
 
 const Dairy = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
+  const cardWidth = 200; // Consistent card width for calculation
+  const gap = 10; // Gap between cards
   const totalElements = elements.elements.length;
-  const [visibleCount, setVisibleCount] = useState(1); 
 
   useEffect(() => {
     const handleResize = () => {
-      const cardWidth = 200; 
-      const containerWidth = window.innerWidth; 
-      const count = Math.floor(containerWidth / cardWidth); 
-      setVisibleCount(count);
+      const containerWidth = window.innerWidth;
+      const count = Math.floor(containerWidth / (cardWidth + gap));
+      setVisibleCount(count > 0 ? count : 1); // Ensure at least one card is visible
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize); 
+    window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Calculate maxIndex considering visible cards and gaps
+  const maxIndex = Math.max(0, totalElements - visibleCount);
+
   const nextSlide = () => {
-    if (currentIndex < totalElements - visibleCount) {
-      setCurrentIndex(prevIndex => prevIndex + 1);
+    if (currentIndex < maxIndex) {
+      setCurrentIndex(prevIndex => Math.min(prevIndex + 1, maxIndex));
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prevIndex => prevIndex - 1);
+      setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
     }
   };
 
   return (
-    <div className='container'style={{backgroundColor:'white'}}>
-        
-      <div className='slider'>
-      <div className='row d-flex'>
-            <div className='col-md-6 col-sm-12 p d-flex justify-content-start'>
-              <p>
-              Dairy, Bread & Eggs
-              </p>
-            </div>
-            <div className='col-md-6 col-sm-12 d-flex justify-content-end'>
-               <p><a href='see.js'>see all</a></p> 
-            </div>
+    <div className="container" style={{ backgroundColor: 'white' }}>
+      <div className="slider">
+        <div className="row d-flex">
+          <div className="col-md-6 col-sm-12 d-flex justify-content-start">
+            <p>Dairy, Bread & Eggs</p>
+          </div>
+          <div className="col-md-6 col-sm-12 d-flex justify-content-end">
+            <p><a href="see.js">see all</a></p>
+          </div>
         </div>
         <div 
           className="slider-track"
           style={{
-            transform: `translateX(-${(currentIndex * 100) / visibleCount}%)`,
+            transform: `translateX(-${Math.min(currentIndex, maxIndex) * (cardWidth + gap)}px)`,
             transition: 'transform 0.5s ease-in-out',
-            width: `${totalElements * (100 / visibleCount)}%`,
+            display: 'flex',
+            gap: `${gap}px`, // Adds consistent gap between cards
           }}
         >
-            
           {elements.elements.map((element, index) => (
-            <div className="slider-card" key={index}>
+            <div className="slider-card" key={index} style={{ width: `${cardWidth}px` }}>
               <Card element={element} />
             </div>
           ))}
         </div>
-        
+
+        {/* Navigation Buttons */}
         {currentIndex > 0 && (
-          <button className='carousel-button prev' onClick={prevSlide}>
+          <button className="carousel-button prev" onClick={prevSlide}>
             <FontAwesomeIcon icon={faChevronLeft} />
           </button>
         )}
         
-        {currentIndex < totalElements - visibleCount && (
-          <button className='carousel-button next' onClick={nextSlide}>
+        {currentIndex < maxIndex && (
+          <button className="carousel-button next" onClick={nextSlide}>
             <FontAwesomeIcon icon={faChevronRight} />
           </button>
         )}
