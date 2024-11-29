@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import Card from './card'; 
+import Card from './card';
 import elementfour from './elements.json';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Mouth = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,6 +13,7 @@ const Mouth = () => {
   const [visibleCount, setVisibleCount] = useState(1);
   const cardWidth = 200; // Set card width for consistent calculation
   const gap = 10; // Gap between cards
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,14 +32,18 @@ const Mouth = () => {
 
   const nextSlide = () => {
     if (currentIndex < maxIndex) {
-      setCurrentIndex(prevIndex => Math.min(prevIndex + 1, maxIndex));
+      setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, maxIndex));
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
+      setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
     }
+  };
+
+  const handleCardClick = (element) => {
+    navigate('/details', { state: { item: element } }); // Navigate to details page with card data
   };
 
   return (
@@ -51,7 +57,7 @@ const Mouth = () => {
             <p><a href="see.js">see all</a></p>
           </div>
         </div>
-        <div 
+        <div
           className="slider-track"
           style={{
             transform: `translateX(-${Math.min(currentIndex, maxIndex) * (cardWidth + gap)}px)`,
@@ -61,7 +67,12 @@ const Mouth = () => {
           }}
         >
           {elementfour.elementfour.map((element, index) => (
-            <div className="slider-card" key={index} style={{ width: `${cardWidth}px` }}>
+            <div
+              className="slider-card"
+              key={index}
+              style={{ width: `${cardWidth}px` }}
+              onClick={() => handleCardClick(element)} // Add click handler for navigation
+            >
               <Card element={element} />
             </div>
           ))}

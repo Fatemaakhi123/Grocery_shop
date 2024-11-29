@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import Card from './card'; 
+import Card from './card';
 import elementone from './elements.json';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Dairy = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,6 +13,7 @@ const Dairy = () => {
   const [visibleCount, setVisibleCount] = useState(1);
   const cardWidth = 200; // Fixed width for each card
   const gap = 10; // Gap between cards
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const handleResize = () => {
@@ -26,18 +28,22 @@ const Dairy = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const maxIndex = totalElements - visibleCount; // Prevents last card overflow
+  const maxIndex = Math.max(0, totalElements - visibleCount); // Prevents last card overflow
 
   const nextSlide = () => {
     if (currentIndex < maxIndex) {
-      setCurrentIndex(prevIndex => Math.min(prevIndex + 1, maxIndex));
+      setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, maxIndex));
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
+      setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
     }
+  };
+
+  const handleCardClick = (element) => {
+    navigate('/details', { state: { item: element } }); // Navigate to the details page with element data
   };
 
   return (
@@ -51,7 +57,7 @@ const Dairy = () => {
             <p><a href="see.js">see all</a></p>
           </div>
         </div>
-        <div 
+        <div
           className="slider-track"
           style={{
             transform: `translateX(-${Math.min(currentIndex, maxIndex) * (cardWidth + gap)}px)`,
@@ -61,7 +67,12 @@ const Dairy = () => {
           }}
         >
           {elementone.elementone.map((element, index) => (
-            <div className="slider-card" key={index} style={{ width: `${cardWidth}px` }}>
+            <div
+              className="slider-card"
+              key={index}
+              style={{ width: `${cardWidth}px` }}
+              onClick={() => handleCardClick(element)} // Navigate to details page on click
+            >
               <Card element={element} />
             </div>
           ))}

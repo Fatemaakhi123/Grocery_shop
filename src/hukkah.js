@@ -3,21 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
-import elementthree from './elements.json';
 import Card from './card';
-
+import elementthree from './elements.json';
+import { useNavigate } from 'react-router-dom'; 
 const Hukkah = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalElements = elementthree.elementthree.length; // Updated to elementthree
   const [visibleCount, setVisibleCount] = useState(1);
-  const cardWidth = 200; // Set card width for consistent calculation
-  const gap = 10; // Gap between cards
-
+  const cardWidth = 200;
+  const gap = 10;
+  const totalElements = elementthree.elementthree.length;
+  const navigate = useNavigate(); 
   useEffect(() => {
     const handleResize = () => {
       const containerWidth = window.innerWidth;
-      const count = Math.floor(containerWidth / (cardWidth + gap)); // Consider gap in calculation
-      setVisibleCount(count > 0 ? count : 1); // Ensure at least one card is visible
+      const count = Math.floor(containerWidth / (cardWidth + gap));
+      setVisibleCount(count > 0 ? count : 1);
     };
 
     handleResize();
@@ -26,18 +26,21 @@ const Hukkah = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const maxIndex = Math.max(0, totalElements - visibleCount); // Prevents last card overflow
+  const maxIndex = Math.max(0, totalElements - visibleCount);
 
   const nextSlide = () => {
     if (currentIndex < maxIndex) {
-      setCurrentIndex(prevIndex => Math.min(prevIndex + 1, maxIndex));
+      setCurrentIndex((prevIndex) => Math.min(prevIndex + 1, maxIndex));
     }
   };
 
   const prevSlide = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
+      setCurrentIndex((prevIndex) => Math.max(prevIndex - 1, 0));
     }
+  };
+const handleCardClick = (element) => {
+    navigate('/details', { state: { item: element } });
   };
 
   return (
@@ -51,17 +54,22 @@ const Hukkah = () => {
             <p><a href="see.js">see all</a></p>
           </div>
         </div>
-        <div 
+        <div
           className="slider-track"
           style={{
             transform: `translateX(-${Math.min(currentIndex, maxIndex) * (cardWidth + gap)}px)`,
             transition: 'transform 0.5s ease-in-out',
             display: 'flex',
-            gap: `${gap}px`, // Adds consistent gap between cards
+            gap: `${gap}px`,
           }}
         >
           {elementthree.elementthree.map((element, index) => (
-            <div className="slider-card" key={index} style={{ width: `${cardWidth}px` }}>
+            <div
+              className="slider-card"
+              key={index}
+              style={{ width: `${cardWidth}px` }}
+              onClick={() => handleCardClick(element)}
+            >
               <Card element={element} />
             </div>
           ))}

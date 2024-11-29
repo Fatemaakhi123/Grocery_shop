@@ -5,19 +5,21 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 import './App.css';
 import Card from './card';
 import elementfive from './elements.json';
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
 
 const Cold = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(1);
-  const cardWidth = 200; // Set card width for consistent calculation
-  const gap = 10; // Gap between cards
+  const cardWidth = 200; 
+  const gap = 10; 
   const totalElements = elementfive.elementfive.length;
+  const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     const handleResize = () => {
       const containerWidth = window.innerWidth;
-      const count = Math.floor(containerWidth / (cardWidth + gap)); // Consider gap in calculation
-      setVisibleCount(count > 0 ? count : 1); // Ensure at least one card is visible
+      const count = Math.floor(containerWidth / (cardWidth + gap)); 
+      setVisibleCount(count > 0 ? count : 1); 
     };
 
     handleResize();
@@ -38,6 +40,11 @@ const Cold = () => {
     if (currentIndex > 0) {
       setCurrentIndex(prevIndex => Math.max(prevIndex - 1, 0));
     }
+  };
+
+  // Handle card click and navigate to the details page with the card data
+  const handleCardClick = (element) => {
+    navigate('/details', { state: { item: element } });
   };
 
   return (
@@ -61,7 +68,7 @@ const Cold = () => {
           }}
         >
           {elementfive.elementfive.map((element, index) => (
-            <div className="slider-card" key={index} style={{ width: `${cardWidth}px` }}>
+            <div className="slider-card" key={index} style={{ width: `${cardWidth}px` }} onClick={() => handleCardClick(element)}>
               <Card element={element} />
             </div>
           ))}
